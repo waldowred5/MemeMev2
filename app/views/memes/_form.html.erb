@@ -11,7 +11,14 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form_with model: @meme do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+     <%= f.submit %>
+  <% end %>
+
+  <%# <div class="actions">
+    <%= f.submit %>
+  </div> %>
 <% end %>
