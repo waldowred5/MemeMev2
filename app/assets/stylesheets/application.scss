@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+div.input {
+    margin: 1rem 0;
+}
+
+abbr[title] {
+    display: none;
+}
+
+label {
+    display: block;
+}
+
+span.hint {
+    font-size: x-small;
+    color: gray;
+}
+
+.password {
+    width: 200px;
+}
+
+.email {
+    width: 200px;
+}
