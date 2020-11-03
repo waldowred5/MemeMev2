@@ -41,7 +41,29 @@ span.hint {
     width: 200px;
 }
 
-.memeImage{
-    width: 100px;
+.imgContainer{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    height: 100%;
+    overflow: auto;
+}
+
+img{
+    border: 5px solid black;
+    width: 400px;
+    height: 400px;
+    padding: 5px;
+    margin:5px;
+}
+
+
+h1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
 
 }
