@@ -1,4 +1,4 @@
-<h1>MemeMe</h1>
+<h1>Top Memes</h1>
 
 <div class="imgContainer">
   <%= image_tag("meme1.png") %>
@@ -30,10 +30,12 @@
       <% @memes.each do |meme| %>
         <tr>
           <td><%= meme[:name] %></td>
-          <td><%= image_tag meme.picture if meme.picture.attached? %></td>
           <td><%= link_to 'Show', meme %></td>
           <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
           <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <tr>
+          <td><%= image_tag meme.picture if meme.picture.attached? %></td>
         </tr>
       <% end %>
     </tbody>

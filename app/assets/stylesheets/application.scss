@@ -78,3 +78,9 @@ h1{
   body { 
     background-image: url('background.jpg'); 
   }
+
+td {
+    img {
+        max-width: 30vw;
+    }
+}
