@@ -10,22 +10,25 @@
   <%= image_tag("meme7.jpeg") %>
   <%= image_tag("meme8.jpeg") %>
 </div>
- 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @memes.each do |meme| %>
+<% if user_signed_in? %>
+  <h1>My Memes</h1>
+  <table>
+    <thead>
       <tr>
-        <td><%= meme[:name] %></td>
-        <td><%= link_to 'Show', meme %></td>
-        <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
-        <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @memes.each do |meme| %>
+        <tr>
+          <td><%= meme[:name] %></td>
+          <td><%= link_to 'Show', meme %></td>
+          <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
+          <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
