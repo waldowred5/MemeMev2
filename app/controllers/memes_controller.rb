@@ -70,9 +70,7 @@ class MemesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meme_params
-      file-upload
       params.fetch(:meme, {})
-      params.require(:meme).permit(:picture)
-      params.require(:meme).permit(:name)
+      params.require(:meme).permit(:picture, :name)
     end
 end
