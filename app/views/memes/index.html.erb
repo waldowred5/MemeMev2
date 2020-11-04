@@ -1,7 +1,15 @@
-<p id="notice"><%= notice %></p>
+<h1>MemeMe</h1>
 
-<h1>Memes</h1>
-
+<div class="imgContainer">
+  <%= image_tag("meme1.png") %>
+  <%= image_tag("meme2.png") %>
+  <%= image_tag("meme3.jpg") %>
+  <%= image_tag("meme4.jpg") %>
+  <%= image_tag("meme5.jpeg") %>
+  <%= image_tag("meme6.jpeg") %>
+  <%= image_tag("meme7.jpeg") %>
+  <%= image_tag("meme8.jpeg") %>
+</div>
 <table>
   <thead>
     <tr>
@@ -11,17 +19,29 @@
 
   <tbody>
     <% @memes.each do |meme| %>
-
       <tr>
         <td><%= image_tag meme.picture if meme.picture.attached? %></td>
         <td><%= link_to 'Show', meme %></td>
         <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
         <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% if user_signed_in? %>
+  <h1>My Memes</h1>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Meme', new_meme_path %>
+    <tbody>
+      <% @memes.each do |meme| %>
+        <tr>
+          <td><%= meme[:name] %></td>
+          <td><%= link_to 'Show', meme %></td>
+          <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
+          <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

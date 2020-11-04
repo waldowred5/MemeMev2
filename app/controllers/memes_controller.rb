@@ -1,5 +1,6 @@
 class MemesController < ApplicationController
   before_action :set_meme, only: [:show, :edit, :update, :destroy]
+  # skip_before_action :verify_authenticity_token, :only => [:create]
 
   # GET /memes
   # GET /memes.json
@@ -69,7 +70,9 @@ class MemesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meme_params
+      file-upload
       params.fetch(:meme, {})
       params.require(:meme).permit(:picture)
+      params.require(:meme).permit(:name)
     end
 end

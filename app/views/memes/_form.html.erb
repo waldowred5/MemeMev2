@@ -10,15 +10,14 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-
- <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg'%> 
-
-  </div
-
+  <%= form_with model: @meme do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <div class="field">
+      <%= form.label :picture %>
+      <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg'%> 
+    </div>
+    <%= f.submit %>
+  <% end %>
 <% end %>
