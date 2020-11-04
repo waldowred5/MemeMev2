@@ -11,7 +11,9 @@
 
   <tbody>
     <% @memes.each do |meme| %>
+
       <tr>
+        <td><%= image_tag meme.picture if meme.picture.attached? %></td>
         <td><%= link_to 'Show', meme %></td>
         <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
         <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
